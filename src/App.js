@@ -1,10 +1,12 @@
 import React from 'react';
-import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import { Global, css } from '@emotion/core';
 import queryString from 'query-string';
 
+import Header from './components/Header/Header';
+import About  from './pages/About';
+import Home from './pages/Home';
 import Search from './pages/Search';
-import Post from './pages/Post';
 
 
 const globalStyles = css`
@@ -12,6 +14,8 @@ const globalStyles = css`
     body {
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 300;
+        padding: 0;
+        margin: 0;
     }
 `;
 
@@ -23,15 +27,16 @@ function App() {
   return (
     <div>
       <Global styles={globalStyles} />
+      <Header/>
       <Switch>
+      <Route exact path="/">
+            <Home/>
+        </Route>
         <Route path="/search">
             <Search query={useQueryString().q} />
         </Route>
-        <Route path="/post">
-            <Post />
-        </Route>
-        <Route exact path="/">
-            <Redirect to="/search" />
+        <Route path="/about">
+            <About/>
         </Route>
       </Switch>
     </div>
