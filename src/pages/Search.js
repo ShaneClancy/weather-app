@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import fetch from 'isomorphic-unfetch';
 
-import { Input, Button } from '../components/FormComponents';
-import Spinner from '../components/Spinner';
-import ErrorContainer from '../components/ErrorContainer';
-import WeatherItem from '../components/WeatherItem';
+import { Input, Button } from '../components/FormComponents/FormComponents';
+import Spinner from '../components/Spinner/Spinner';
+import ErrorContainer from '../components/ErrorContainer/ErrorContainer';
+import WeatherContainer from '../components/WeatherContainer/WeatherContainer';
 
 // const API_KEY = process.env.API_KEY;
 
@@ -58,7 +58,7 @@ function Search({ query }) {
     }, [ query ]);
 
     return (
-        <div class="">
+        <div className="App-container">
             <form onSubmit={(event) => {
                 event.preventDefault();
                 history.push(`?q=${inputQuery}`);
@@ -76,7 +76,7 @@ function Search({ query }) {
                 <ul>
                     {weatherData && weatherData.map(data => (
                         <li key={data.dt}>
-                            <WeatherItem data={data}/>
+                            <WeatherContainer data={data}/>
                         </li>
                     ))}
                 </ul>

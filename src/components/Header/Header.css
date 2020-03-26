@@ -1,0 +1,63 @@
+.App-header {
+    background-color : #1d1d1d;
+}
+
+.title {
+    margin: auto;
+    text-align: center;
+    font-size: 4em;
+    color : rgb(242, 241, 239);
+}
+
+.title:hover {
+    text-decoration: underline;
+}
+
+li  {
+    list-style-type: none;
+}
+
+.Nav-container {
+    border-top: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+    margin: 0;
+    margin-left: -20px;
+    display: grid;
+    grid-template-columns: auto auto auto 80%;
+}
+
+.Nav-elem {
+    color: rgb(242, 241, 239);
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.Nav-elem:hover {
+    color: #626262;
+    transition-duration: 0.1s;
+    -moz-transition-duration: 0.1s;
+    -webkit-transition-duration: 0.1s;
+    -o-transition-duration: 0.1s;
+}
+
+.Nav-elem:focus {
+    color: #925205;
+}
+
+@media only screen and (max-width: 768px) {
+    .title {
+        margin: auto;
+        text-align: center;
+        font-size: 2em;
+        color : rgb(242, 241, 239);
+    }
+
+    .Nav-container {
+        border-top: 1px solid #424242;
+        border-bottom: 1px solid #424242;
+        margin: 0;
+        margin-left: -20px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
