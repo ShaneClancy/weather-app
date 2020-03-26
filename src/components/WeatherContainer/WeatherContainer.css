@@ -1,0 +1,9 @@
+.text {
+    font-size: 1em;
+}
+
+.Weather-container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto, 2);
+}
